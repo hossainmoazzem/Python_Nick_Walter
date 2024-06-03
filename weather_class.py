@@ -4,7 +4,7 @@ import requests #imports requests library in ordet to use requests.get() functio
 # Create a class named City, for the City Class you would like to ask for Name of the city, Latitude and Longitude of the City also units of weather , make it default "metric", so it prints temperature as °C
 # https://www.degreesymbol.net/ [go to this url to get the degree ° symbol]
  
- class City:
+class City:
     def __init__(self, name, lat, lon, units = "metric"):
         self.name = name
         self.lat = lat
@@ -21,19 +21,23 @@ import requests #imports requests library in ordet to use requests.get() functio
 
         
     def temp_print(self):
-        print(f"The Temperature in your city Currently: {self.temp}° C")
-        print(f"The Highest Temperature in your city today: {self.temp_max}° C")
-        print(f"The Lowest Temperature in your city today: {self.temp_min}° C")
+        units_symble = "Celsius" # decleared a variable for units. using a simple if condition gave an option to user to get metric = Celsius [set default in init function] or imperial = Fahrenheit
+        if self.units == "imperial":
+           units_symble = "Fahrenheit"
+
+        print(f"The Temperature in your city Currently: {self.temp}° {units_symble}")
+        print(f"The Highest Temperature in your city today: {self.temp_max}° {units_symble}")
+        print(f"The Lowest Temperature in your city today: {self.temp_min}° {units_symble}")
         print("-------------------------------------------------------")
 
 
 
 
 
-London = City("London",51.509865,-0.118092)
+London = City("London",51.509865,-0.118092,"imperial")
 London.temp_print()
 
-Sydney = City("Sydney",-33.968109,151.104080)
+Sydney = City("Sydney",-33.968109,151.104080,"")
 Sydney.temp_print()
 
 Dhaka = City("Dhaka",23.822350,90.365417)
