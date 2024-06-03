@@ -1,12 +1,16 @@
-import requests
+import requests #imports requests library in ordet to use requests.get() function to fetch data from weather API
 
-class City:
+
+# Create a class named City, for the City Class you would like to ask for Name of the city, Latitude and Longitude of the City also units of weather , make it default "metric", so it prints temperature as °C
+# https://www.degreesymbol.net/ [go to this url to get the degree ° symbol]
+ 
+ class City:
     def __init__(self, name, lat, lon, units = "metric"):
         self.name = name
         self.lat = lat
         self.lon = lon
         self.units = units
-        self.get_data()
+        self.get_data() # this function gets data from API, Converts it to JSON format
 
     def get_data(self):
         weather_info = requests.get(f"https://api.openweathermap.org/data/2.5/weather?lat={self.lat}&lon={self.lon}&appid=7fd7eefeb1dc04c071716e91b1567e02&units={self.units}")
