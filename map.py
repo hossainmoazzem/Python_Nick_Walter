@@ -14,3 +14,9 @@ student_result = []
 [student_result.append(f"{student.name} Passed") if student.score >= 0.7 else student_result.append(f"{student.name} Failed") for student in students]
 
 print(student_result)
+
+numbers = [1,2,3,4,5]
+
+print(list(map(lambda num: num*2, numbers)))
+
+even = print(list(filter(lambda number: number % 2 == 0,numbers)))
