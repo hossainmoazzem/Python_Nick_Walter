@@ -20,3 +20,21 @@ numbers = [1,2,3,4,5]
 print(list(map(lambda num: num*2, numbers)))
 
 even = print(list(filter(lambda number: number % 2 == 0,numbers)))
+ 
+ 
+# Converting Temperatures
+
+def convert_to_fahrenheit(celsius_temp):
+   return celsius_temp*(9/5) +32
+
+# list of temperature in Celsius
+temperature_celsius = [0,10,20,30,40,100]
+
+#use map() to apply the conversion function to each item in the list of temperatures
+temperature_fahrenheit = map(convert_to_fahrenheit,temperature_celsius)
+
+# convert the map object to a list to display the results
+temperature_fahrenheit_list = list(temperature_fahrenheit)
+
+# Print the list of temperatures in Farenheit
+print(temperature_fahrenheit_list)
